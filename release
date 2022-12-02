@@ -1,0 +1,750 @@
+local Atlas = loadstring(game:HttpGet("https://rd2glory.com/Atlas.lua"))()
+
+local keys = {
+    "5XHREn;7}cWDQz!";
+    "=F%!o$2rYact#q2";
+    "S1@9~{'=D(66]FQ";
+	"3}XXGC3cM7o'G^*";
+	"7A2543264629440";
+	"3677397A2443645";
+	"703373367637924";
+	"6E5A72345377821";
+	"7A25432A46D4A61";
+	"723475377814125";
+	"576D5A713443777";
+
+};
+
+local UI = Atlas.new({
+    Name = "VoidRocks",
+    Credit = "Scripted By JDM Flair#8017";
+    Color = Color3.fromRGB(114,137,218);
+    ConfigFolder = "void.rocks";
+    Bind = "RightShift";
+    UseLoader = true;
+    FullName = "Void"; 
+    CheckKey = function(inputtedKey)
+        return table.find(keys, inputtedKey)
+    end;
+    Discord = "https://discord.gg/78Y7Nc6x5x"; 
+})
+
+UI:Destroy()
+
+local Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/Loco-CTO/UI-Library/main/VisionLibV2/source.lua'))()
+
+Window = Library:Create({
+	Name = "Void².rocks",
+	Footer = "By rainbase.rocks#0001",
+	ToggleKey = Enum.KeyCode.RightShift,
+	LoadedCallback = function()
+		Window:TaskBarOnly(true)
+	end,
+	KeySystem = false,
+	Key = "123456",
+	MaxAttempts = 5,
+	DiscordLink = nil,
+	ToggledRelativeYOffset = -11
+})
+
+print("Welcome To Void², Made By rainbase.rocks#0001")
+Library:Notify({
+	Name = "Welcome",
+	Text = "Successfully Connected To Void Networks",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+Window:ChangeTogglekey(Enum.KeyCode.RightShift)
+
+local Tab = Window:Tab({
+	Name = "Home",
+	Icon = "rbxassetid://11671641973",
+	Color = Color3.new(1, 0, 0)
+})
+
+--Home
+local Section = Tab:Section({
+	Name = "Home"
+})
+
+local Button = Section:Button({
+	Name = "Discord Link",
+	Callback = function()
+setclipboard("https://discord.gg/QKV9mJsnes")
+	end
+})
+
+--Updates
+local Tab = Window:Tab({
+	Name = "Updates",
+	Icon = "rbxassetid://11671581103",
+	Color = Color3.new(1, 0, 0)
+})
+
+local Section = Tab:Section({
+	Name = "Updates"
+})
+
+local Button = Section:Button({
+	Name = "Beta 3 - Press F9 After Clicking",
+	Callback = function()
+print("Added Custom Icons and more scripts.")
+	end
+})
+
+--Universal
+local Tab = Window:Tab({
+	Name = "Universal",
+	Icon = "rbxassetid://11671404872",
+	Color = Color3.new(1, 0, 0)
+})
+
+local Section = Tab:Section({
+	Name = "Free Scripts"
+})
+
+local Button = Section:Button({
+	Name = "Orca",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/snapshot.lua"))()
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "ESP & Aimbot",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet("https://pastebin.com/raw/EvLkbMq4"))
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "CMD-X Admin",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "Custom ESP",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 3,
+			Callback = function()
+			end
+		})
+
+wait(1.9)
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local highlight = Instance.new("Highlight")
+highlight.Name = "Highlight"
+function a(v)
+local highlightClone = Instance.new("Highlight")
+        highlightClone.Adornee = v.Character
+        highlightClone.Parent = v.Character:WaitForChild("HumanoidRootPart")
+        highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+        highlightClone.Name = "Highlight"
+end
+for i, v in pairs(Players:GetPlayers()) do
+    if v.Character and v.Character:FindFirstChild("HumanoidRootPart") then
+           a(v)
+    end
+    v.CharacterAdded:Connect(function()
+       a(v)
+end)
+end
+game.Players.PlayerAdded:Connect(function(player)
+    player.CharacterAdded:Connect(function()
+a(player)
+end)
+end)
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "FPS & Ping Counter",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/main/FPS-Counter'))()
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+--Blox Fruits
+local Tab = Window:Tab({
+	Name = "Blox Fruits",
+	Icon = "rbxassetid://11671388886",
+	Color = Color3.new(1, 0, 0)
+})
+
+local Section = Tab:Section({
+	Name = "Hot Scripts"
+})
+
+local Button = Section:Button({
+	Name = "Mukuro Hub",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.9)
+
+loadstring(game:HttpGet"https://raw.githubusercontent.com/xDepressionx/Free-Script/main/AllScript.lua")()
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "Neva Hub - Keyless",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.9)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/VEZ2/NEVAHUB/main/2'))()
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "Table Hub Cracked",
+	Callback = function()
+		Library:Notify({
+			Name = "Soon",
+			Text = "Coming Soon",
+			Icon = "rbxassetid://11401835376",
+			Duration = 3,
+			Callback = function()
+			end
+		})
+	
+
+loadstring(game:HttpGet("https://pastebin.com/raw/T85BC0xd"))
+
+
+	end
+})
+
+local Section = Tab:Section({
+	Name = "Free Scripts"
+})
+
+local Button = Section:Button({
+	Name = "Ripper Hub V2",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/hajibeza/RIPPER-HUB/main/RIPPERHUBV2.lua"))()
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "Fast Fruit Hopper",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.9)
+
+repeat wait() until game.IsLoaded and (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()) and (game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait())
+if Ran then 
+    return
+else
+    getgenv().Ran = true
+end
+
+if game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("Main", 9e9):FindFirstChild("ChooseTeam") then
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("SetTeam", "Pirates")
+    wait(3)
+end
+
+local plr = game.Players.LocalPlayer
+local chr = plr.Character
+local t = game.TweenService
+
+local bv = Instance.new("BodyVelocity")
+bv.MaxForce = Vector3.new(1/0, 1/0, 1/0)
+bv.Velocity = Vector3.new()
+bv.Name = "bV"
+local bav = Instance.new("BodyAngularVelocity")
+bav.AngularVelocity = Vector3.new()
+bav.MaxTorque = Vector3.new(1/0, 1/0, 1/0)
+bav.Name = "bAV" 
+
+for _,v in next, workspace:GetChildren() do
+    if v.Name:find("Fruit") and (v:IsA("Tool") or v:IsA("Model")) then
+        repeat 
+            local anc1 = bv:Clone()
+            anc1.Parent = chr.HumanoidRootPart
+            local anc2 = bav:Clone()
+            anc2.Parent = chr.HumanoidRootPart
+            local p = t:Create(chr.HumanoidRootPart, TweenInfo.new((plr:DistanceFromCharacter(v.Handle.Position)-100)/320, Enum.EasingStyle.Linear), {CFrame=v.Handle.CFrame + Vector3.new(0, v.Handle.Size.Y, 0)})
+            p:Play()
+            p.Completed:Wait()
+            chr.HumanoidRootPart.CFrame = v.Handle.CFrame
+            anc1:Destroy()
+            anc2:Destroy()
+            wait(1)
+        until v.Parent ~= workspace
+        wait(1)
+        local fruit = chr:FindFirstChildOfClass("Tool") and chr:FindFirstChildOfClass("Tool").Name:find("Fruit") and chr:FindFirstChildOfClass("Tool") or (function()
+            for _,fr in plr.Backpack:GetChildren() do
+                if fr.Name:find("Fruit") then
+                    return fr
+                end 
+            end
+        end)()
+        print(fruit)
+        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StoreFruit", fruit:GetAttribute("OriginalName"), fruit)
+    end
+end
+
+print('nope')
+local currentJobId = game.JobId
+repeat
+    task.spawn(pcall, function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer, game:GetService("ReplicatedStorage").__ServerBrowser:InvokeServer(math.random(1, 100))[math.random(1, 100)])
+    end)    
+    wait(2)
+until game.JobId ~= currentJobId
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "Thunder Hub",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet"https://raw.githubusercontent.com/RegularThunder/Protected/main/BF.lua")()
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+--Arsenal
+local Tab = Window:Tab({
+	Name = "Arsenal",
+	Icon = "rbxassetid://11671388886",
+	Color = Color3.new(1, 0, 0)
+})
+
+local Section = Tab:Section({
+	Name = "Hot Scripts"
+})
+
+local Button = Section:Button({
+	Name = "Owl Hub",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.9)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"))();
+
+Library:Notify({
+	Name = "Loaded",
+	Text = "Loaded Script",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+local Button = Section:Button({
+	Name = "Dark Hub (Has Key)",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RandomAdamYT/DarkHub/master/Init", true))() 
+
+	Library:Notify({
+			Name = "Loaded",
+			Text = "Loaded Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+	end
+})
+
+local Button = Section:Button({
+	Name = "Aim Bot (Open Source)",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PhoenixAceVFX/Roblox-Scripts/master/Arsenal%20Aimbot.lua"))()
+
+	Library:Notify({
+			Name = "Loaded",
+			Text = "Loaded Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+	end
+})
+
+local Button = Section:Button({
+	Name = "V.G Hub",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()
+
+	Library:Notify({
+			Name = "Loaded",
+			Text = "Loaded Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+	end
+})
+
+--Phantom Forces
+local Tab = Window:Tab({
+	Name = "Phantom Forces",
+	Icon = "rbxassetid://11671388886",
+	Color = Color3.new(1, 0, 0)
+})
+
+local Section = Tab:Section({
+	Name = "Recommended Scripts"
+})
+
+local Button = Section:Button({
+	Name = "Silent Aim (Torso Only)",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SpeedyPresents/phantomtorso/main/torso"))()
+
+	Library:Notify({
+			Name = "Loaded",
+			Text = "Loaded Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+	end
+})
+
+local Button = Section:Button({
+	Name = "Silent Aim (Head Only) (Risky)",
+	Callback = function()
+		Library:Notify({
+			Name = "Loading",
+			Text = "Loading Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+
+wait(1.1)
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SpeedyPresents/phantomtorso/main/head"))()
+
+	Library:Notify({
+			Name = "Loaded",
+			Text = "Loaded Script",
+			Icon = "rbxassetid://11401835376",
+			Duration = 1,
+			Callback = function()
+			end
+		})
+	end
+})
+
+--Credits
+local Tab = Window:Tab({
+	Name = "Credits",
+	Icon = "rbxassetid://11671606442",
+	Color = Color3.new(1, 0, 0)
+})
+
+local Section = Tab:Section({
+	Name = "Credits"
+})
+
+local Button = Section:Button({
+	Name = "Discord Invite",
+	Callback = function()
+setclipboard("https://discord.gg/QKV9mJsnes")
+
+Library:Notify({
+	Name = "Copied",
+	Text = "Paste The Link In A Browser",
+	Icon = "rbxassetid://11401835376",
+	Duration = 3,
+	Callback = function()
+	end
+})
+
+	end
+})
+
+
+--Settings
+local Tab = Window:Tab({
+	Name = "Settings",
+	Icon = "rbxassetid://11671631231",
+	Color = Color3.new(1, 0, 0)
+})
+
+local Section = Tab:Section({
+	Name = "Toggle Key"
+})
+local Keybind = Section:Keybind({
+    Name = "Toggle keybind",
+    Default = Enum.KeyCode.Return,
+    Callback = function() return end,
+    UpdateKeyCallback = function(Key)
+		task.wait(0.1)
+        Window:ChangeTogglekey(Key)
+    end
+})
+
+local Section = Tab:Section({
+	Name = "Destroy Library"
+})
+local Button = Section:Button({
+	Name = "Destroy library",
+	Callback = function()
+		Library:Destroy()
+	end
+})
+
+--Made By rainbase.rocks#0001
